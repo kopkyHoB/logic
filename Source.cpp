@@ -7,7 +7,7 @@
 
 int autowrite(void)
 {
-    int tb, te, i, n, e, * mas;
+    int tb, te, i, n, e, * mas, min = 99999999, max = 0;
 
     printf("Введи размер массива: ");
     scanf_s("%d", &n);
@@ -17,22 +17,34 @@ int autowrite(void)
     srand(time(0));
     mas = (int*)malloc(n * sizeof(int));
 
-    printf("Изначальный массив: \n");
+    printf("Массив: \n");
     for (i = 0; i < n; i++) {
-        mas[i] = rand() % (2 * e - 1);
-        printf("%d, ", mas[i]);
+        mas[i] = rand() % e;
+        printf("%d ", mas[i]);
     }
+    for (i = 0; i < n; i++)
+    {
+        if (mas[i] < min)
+            min = mas[i];
+    }
+    for (i = 0; i < n; i++)
+    {
+        if (mas[i] > max)
+            max = mas[i];
+    }
+    printf("\nМинимальное число: %d", min);
+    printf("\nМаксимальное число: %d", max);
+    max = max - min;
+    printf("\nРазница между максимальным и минимальным числами составляет: %d", max);
     printf("\nНажмите ENTER для выхода в главное меню... \n");
-    getchar(); getchar();
+    _getch();
     return 0;
     
 }
-int sort(void)
-
 
 int selfwrite(void)
 {
-    int i, n, * mas;
+    int i, n, * mas, min = 99999999, max = 0;
     printf("Введи размер массива: ");
     scanf_s("%d", &n);
     mas = (int*)malloc(n * sizeof(int));
@@ -45,8 +57,22 @@ int selfwrite(void)
     for (int i = 0; i < n; i++) {
         printf("%d, ", mas[i]);
     }
+    for (i = 0; i < n; i++)
+    {
+        if (mas[i] < min)
+            min = mas[i];
+    }
+    for (i = 0; i < n; i++)
+    {
+        if (mas[i] > max)
+            max = mas[i];
+    }
+    printf("\nМинимальное число: %d", min);
+    printf("\nМаксимальное число: %d", max);
+    max = max - min;
+    printf("\nРазница между максимальным и минимальным числами составляет: %d", max);
     printf("\nНажмите ENTER для выхода в главное меню... \n");
-    getchar(); getchar();
+    _getch();
     return 0;
 }
 

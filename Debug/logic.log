@@ -2,6 +2,5 @@
 C:\Users\zorro\source\repos\logic\Source.cpp(17,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 C:\Users\zorro\source\repos\logic\Source.cpp(10,9): warning C4101: tb: неиспользованная локальная переменная
 C:\Users\zorro\source\repos\logic\Source.cpp(10,13): warning C4101: te: неиспользованная локальная переменная
-C:\Users\zorro\source\repos\logic\Source.cpp(33,9): warning C4101: i: неиспользованная локальная переменная
-C:\Users\zorro\source\repos\logic\Source.cpp(73,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\zorro\source\repos\logic\Source.cpp(101,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
   logic.vcxproj -> C:\Users\zorro\source\repos\logic\Debug\logic.exe
