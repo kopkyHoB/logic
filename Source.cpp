@@ -6,36 +6,49 @@
 #include <locale.h>
 #include <windows.h>
 
-int matrix(void) 
+int matrix(void)
 {
-    int mas[10][10], e, i, j, sum = 0, k=0;
+    int* mas, e, i, j, m, n, sum = 0, k = 0;
+
     printf("Введи число для определения диапазона массива: ");
     scanf_s("%d", &e);
+    printf("Введи число для определения размерности массива (m*n) через пробел: ");
+    scanf_s("%d %d", &m, &n);
     e++;
-    srand(time(0));
-    for (i = 0; i < 10; i++)
+    int** A;
+    A = new int* [n]; 
+    for (int i = 0; i < n; i++) {
+        A[i] = new int[m];
+    }
+    /*
+    for (i = 0; i < n; i++) {
+        mas[i] = rand() % e;
+        printf("%d ", mas[i]);
+    }
+    */
+    for (i = 0; i < n; i++)
     {
-        for (j = 0; j < 10; j++)
+        for (j = 0; j < m; j++)
         {
-            mas[i][j] = rand() % e;
-            printf("%3d", mas[i][j]);
-   
+            A[i][j] = rand() % e;
+            printf("%d ", A[i][j]);
         }
         printf("\n");
     }
-    for (i = 0; i < 10; ++i) {
-        sum = 0;
-        k++;
-        for (j = 0; j < 10; ++j) {
-            sum += mas[i][j];
+        
+        for (i = 0; i < 10; ++i) {
+            sum = 0;
+            k++;
+            for (j = 0; j < 10; ++j) {
+                sum += A[i][j];
+            }
+            printf("\nСтрока: %d Сумма: %d\n", k, sum);
         }
-        printf("Строка: %d Сумма: %d\n", k, sum);
-
+        
+        printf("\nНажмите ENTER для выхода в главное меню... \n");
+        _getch();
+        return 0;
     }
-    printf("\nНажмите ENTER для выхода в главное меню... \n");
-    _getch();
-    return 0;
-}
     
 int autowrite(void)
 {
